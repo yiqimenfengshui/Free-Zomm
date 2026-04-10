@@ -1,9 +1,463 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Test Page</title>
+
+<html class="dark" lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Neon Oracle | 命理变现系统</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&amp;family=Space+Grotesk:wght@300;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "background": "#131313",
+                    "surface-bright": "#393939",
+                    "on-secondary-fixed": "#251a00",
+                    "secondary-fixed-dim": "#f7be1d",
+                    "on-tertiary-fixed-variant": "#005321",
+                    "on-error-container": "#ffdad6",
+                    "on-secondary-container": "#5b4400",
+                    "on-tertiary-container": "#aaffb4",
+                    "outline-variant": "#4d4354",
+                    "secondary-container": "#e4ae00",
+                    "primary": "#ddb8ff",
+                    "tertiary-fixed-dim": "#4ae176",
+                    "on-tertiary-fixed": "#002109",
+                    "outline": "#988ca0",
+                    "on-background": "#e5e2e1",
+                    "on-primary": "#490080",
+                    "tertiary-fixed": "#6bff8f",
+                    "error": "#ffb4ab",
+                    "tertiary": "#4ae176",
+                    "on-secondary-fixed-variant": "#5a4300",
+                    "surface-container-low": "#1c1b1b",
+                    "surface-variant": "#353534",
+                    "primary-fixed": "#f0dbff",
+                    "inverse-on-surface": "#313030",
+                    "inverse-surface": "#e5e2e1",
+                    "error-container": "#93000a",
+                    "inverse-primary": "#861fdd",
+                    "surface-dim": "#131313",
+                    "primary-fixed-dim": "#ddb8ff",
+                    "surface-tint": "#ddb8ff",
+                    "on-secondary": "#3f2e00",
+                    "surface-container-highest": "#353534",
+                    "on-error": "#690005",
+                    "surface-container": "#201f1f",
+                    "surface": "#131313",
+                    "on-primary-fixed": "#2c0051",
+                    "on-primary-fixed-variant": "#6800b4",
+                    "on-surface-variant": "#cfc2d7",
+                    "secondary-fixed": "#ffdf9a",
+                    "surface-container-high": "#2a2a2a",
+                    "on-tertiary": "#003915",
+                    "on-surface": "#e5e2e1",
+                    "tertiary-container": "#007b35",
+                    "primary-container": "#9333ea",
+                    "secondary": "#ffca45",
+                    "on-primary-container": "#f6e6ff",
+                    "surface-container-lowest": "#0e0e0e"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Inter"],
+                    "body": ["Inter"],
+                    "label": ["Space Grotesk"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .wealth-gradient {
+        background: linear-gradient(135deg, #e4ae00 0%, #ffca45 100%);
+      }
+      .kinetic-shadow:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px -20px rgba(147, 51, 234, 0.3);
+      }
+      .no-line-rule { border: none !important; }
+      .glass-oracle {
+        background: rgba(147, 51, 234, 0.1);
+        backdrop-filter: blur(20px);
+      }
+    </style>
 </head>
-<body>
-  <h1>🔥 Website is LIVE 🔥</h1>
-</body>
-</html>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#131313]/80 backdrop-blur-md no-line-rule">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
+<div class="text-2xl font-black tracking-tighter text-[#E5E2E1] font-headline uppercase">
+                The Neon Oracle
+            </div>
+<div class="hidden md:flex space-x-8 items-center font-headline font-bold tracking-tighter uppercase text-sm">
+<a class="text-[#FFCA45] border-b-2 border-[#FFCA45] pb-1 transition-all duration-300" href="#system">The System</a>
+<a class="text-[#CFC2D7] hover:text-[#4AE176] transition-all duration-300" href="#results">Results</a>
+<a class="text-[#CFC2D7] hover:text-[#4AE176] transition-all duration-300" href="#offer">The Offer</a>
+<a class="text-[#CFC2D7] hover:text-[#4AE176] transition-all duration-300" href="#faq">FAQ</a>
+</div>
+<a class="bg-tertiary text-on-tertiary px-6 py-2 rounded-xl font-headline font-black tracking-tighter text-sm transition-all duration-300 hover:scale-105 active:scale-95" href="https://wa.link/t84xz3">
+                GET ACCESS NOW
+            </a>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative pt-32 pb-20 px-8 overflow-hidden min-h-screen flex items-center">
+<div class="absolute inset-0 z-0">
+<div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-container/20 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary-container/10 rounded-full blur-[120px]"></div>
+</div>
+<div class="relative z-10 max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-12 items-center">
+<div class="text-left">
+<div class="inline-block px-4 py-1 mb-6 bg-surface-container-high rounded-full border border-outline-variant/20">
+<span class="font-label text-secondary text-xs tracking-widest uppercase">High-Velocity Results Only</span>
+</div>
+<h1 class="text-6xl md:text-8xl font-black tracking-tighter leading-[0.9] mb-8 text-on-surface">
+                    🚀 学了那么多命理，<br/>
+<span class="text-primary">结果一毛钱</span><br/>
+                    都没赚到？
+                </h1>
+<p class="text-xl md:text-2xl text-on-surface-variant font-light leading-relaxed mb-10 max-w-xl">
+                    打破传统玄学禁锢。结合 <span class="text-secondary font-bold">命理 + AI + 短视频</span>，构建你的高变现数字资产。
+                </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="bg-tertiary text-on-tertiary px-10 py-5 rounded-xl font-headline font-black text-lg tracking-tighter hover:scale-105 transition-transform text-center" href="https://wa.link/t84xz3">
+                        GET ACCESS NOW
+                    </a>
+<div class="flex items-center gap-3 px-6 py-4">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-label text-sm uppercase tracking-wider">LIMITED TO 20 SLOTS</span>
+</div>
+</div>
+</div>
+<div class="relative group">
+<div class="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+<div class="relative bg-surface-container-high rounded-xl overflow-hidden aspect-square md:aspect-video lg:aspect-square">
+<img alt="Cyberpunk crystal ball neon" class="w-full h-full object-cover" data-alt="Futuristic neon glowing crystal ball with floating digital particles and data streams in a dark cinematic tech environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWN3bur4HOdi97j_4l7qm8jho7Fbcaq7LMjaIpGmhAirdma8KnfVkL_VbGlSWX1uZm5JnT2hEc7VJaklXGn4n_KOBPj8odnZN2I0vSLYV5r1Jo_BQc8S1ls1LWq0Oy55HEm3TRNjlWcXzdNU74TFwrdT6tnvIqcAlfLW16dpyXh_uh31UnQ42QU6wSK-sfhZ1rWw3vcKuGX6WFzfDl1R9seDJrXA5VKueWe32VrFX5lieXjaBFPuNz_Yp5LeCuHiKolXNnSGqfbcs"/>
+<div class="absolute bottom-0 left-0 right-0 p-8 glass-oracle">
+<div class="flex justify-between items-end">
+<div>
+<p class="font-label text-xs text-secondary mb-1">SYSTEM STATUS</p>
+<p class="text-2xl font-bold tracking-tight">ACTIVE PROTOCOL</p>
+</div>
+<div class="text-right">
+<p class="font-label text-xs text-tertiary mb-1">LIVE FEED</p>
+<p class="text-2xl font-bold tracking-tight">V3.01</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Pain Points Section -->
+<section class="py-24 px-8 bg-surface-container-low" id="results">
+<div class="max-w-7xl mx-auto">
+<div class="mb-16 text-center">
+<h2 class="text-4xl md:text-6xl font-black tracking-tighter uppercase mb-4">目前的困局</h2>
+<div class="h-1 w-24 bg-primary mx-auto"></div>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<!-- Pain Card 1 -->
+<div class="bg-surface-container-high p-10 rounded-xl kinetic-shadow transition-all duration-300 group">
+<span class="material-symbols-outlined text-primary text-5xl mb-6">visibility_off</span>
+<h3 class="text-2xl font-bold mb-4">看不准</h3>
+<p class="text-on-surface-variant leading-relaxed">理论学了一大堆，实战一问就懵逼。抓不住核心痛点，客户反馈模棱两可。</p>
+</div>
+<!-- Pain Card 2 -->
+<div class="bg-surface-container-high p-10 rounded-xl kinetic-shadow transition-all duration-300">
+<span class="material-symbols-outlined text-primary text-5xl mb-6">handyman</span>
+<h3 class="text-2xl font-bold mb-4">用不上</h3>
+<p class="text-on-surface-variant leading-relaxed">工具落后，全靠人工计算和记忆。在这个快节奏时代，效率就是你的生命线。</p>
+</div>
+<!-- Pain Card 3 -->
+<div class="bg-surface-container-high p-10 rounded-xl kinetic-shadow transition-all duration-300 border-2 border-secondary/10">
+<span class="material-symbols-outlined text-secondary text-5xl mb-6" style="font-variation-settings: 'FILL' 1;">monetization_on</span>
+<h3 class="text-2xl font-bold mb-4">赚不到钱</h3>
+<p class="text-on-surface-variant leading-relaxed">最核心的问题：空有技术，没有客源。不知道如何通过短视频获取流量，更不懂成交。</p>
+</div>
+</div>
+</div>
+</section>
+<!-- The Solution: 3 Pillars -->
+<section class="py-24 px-8" id="system">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div class="max-w-2xl">
+<p class="font-label text-primary tracking-widest uppercase mb-2">The Oracle Framework</p>
+<h2 class="text-5xl md:text-7xl font-black tracking-tighter uppercase leading-none">命理变现系统</h2>
+</div>
+<div class="text-on-surface-variant font-label text-sm uppercase tracking-tighter">
+                    Revolutionizing Ancient Wisdom <br/> with Artificial Intelligence
+                </div>
+</div>
+<div class="grid lg:grid-cols-3 gap-0 border border-outline-variant/20 rounded-xl overflow-hidden">
+<div class="p-12 bg-surface-container hover:bg-surface-container-high transition-colors border-b lg:border-b-0 lg:border-r border-outline-variant/20">
+<div class="text-primary text-6xl font-black mb-8 opacity-20">01</div>
+<h3 class="text-3xl font-black mb-6">看得懂</h3>
+<ul class="space-y-4">
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-tertiary text-sm">check_circle</span> 八字底层逻辑拆解
+                        </li>
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-tertiary text-sm">check_circle</span> 奇门遁甲现代应用
+                        </li>
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-tertiary text-sm">check_circle</span> 风水与六爻实战
+                        </li>
+</ul>
+</div>
+<div class="p-12 bg-surface-container hover:bg-surface-container-high transition-colors border-b lg:border-b-0 lg:border-r border-outline-variant/20">
+<div class="text-secondary text-6xl font-black mb-8 opacity-20">02</div>
+<h3 class="text-3xl font-black mb-6">用得出</h3>
+<ul class="space-y-4">
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-tertiary text-sm">check_circle</span> 实战案例深度训练
+                        </li>
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-tertiary text-sm">check_circle</span> 即学即用的批命模板
+                        </li>
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-tertiary text-sm">check_circle</span> 解决客户实际痛点
+                        </li>
+</ul>
+</div>
+<div class="p-12 bg-surface-container hover:bg-surface-container-high transition-colors">
+<div class="text-tertiary text-6xl font-black mb-8 opacity-20">03</div>
+<h3 class="text-3xl font-black mb-6">赚得到</h3>
+<ul class="space-y-4">
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-tertiary text-sm">check_circle</span> AI 辅助内容创作
+                        </li>
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-tertiary text-sm">check_circle</span> 短视频爆款逻辑
+                        </li>
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-tertiary text-sm">check_circle</span> 自动化私域引流流程
+                        </li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- What You Get: Bento Grid Layout -->
+<section class="py-24 px-8 bg-surface-container-lowest">
+<div class="max-w-7xl mx-auto">
+<h2 class="text-4xl font-black mb-16 tracking-tight flex items-center gap-4">
+<span class="w-12 h-[2px] bg-secondary"></span>
+                课程核心板块
+            </h2>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="md:col-span-2 bg-surface-container-high p-8 rounded-xl flex flex-col justify-between min-h-[300px]">
+<div>
+<h4 class="text-2xl font-bold mb-4">实战课程结构</h4>
+<p class="text-on-surface-variant">从零开始建立你的命理认知体系，不仅是理论，更是赚钱的方法论。</p>
+</div>
+<img alt="Circuit board close up" class="w-full h-32 object-cover rounded-lg opacity-40" data-alt="Abstract macro shot of futuristic glowing computer circuit board with purple and gold light patterns" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAb2njJxkjFyl5qVqY4t3PjJTS16OsVbViS3ZF_QtoSZ2Bgau_IaoCclW2RIQN3Gb1CgdPquy15Iz-r5nHusr2TTFxiYtV8eXJJPZyIqOwXMgTmQjUBuKIDmq9H7_JXkRtLP5Nb9yMEb_Qp3vpqd1QoNs5ogRjAkHJuuoV2u3zcqf8OBpIoYLb9n0-VAxL5MP5xdLMRnTQS596C1LoLq3q4CBrEiOMoashlGTpFADB5YZ_UkU4Ov62HX5BTnloFfU2A9dwj_UoTFP0"/>
+</div>
+<div class="bg-secondary-container p-8 rounded-xl text-on-secondary-container flex flex-col justify-center">
+<span class="material-symbols-outlined text-4xl mb-4">smart_toy</span>
+<h4 class="text-xl font-black mb-2 uppercase">AI 打法</h4>
+<p class="text-sm">利用AI技术 10倍速产出内容。</p>
+</div>
+<div class="bg-surface-container-high p-8 rounded-xl flex flex-col items-center justify-center text-center">
+<span class="material-symbols-outlined text-primary text-5xl mb-4">dynamic_feed</span>
+<h4 class="text-xl font-bold">接单流程</h4>
+</div>
+<div class="md:col-span-1 bg-surface-container-high p-8 rounded-xl flex flex-col justify-center">
+<h4 class="text-xl font-bold mb-4">客户获取</h4>
+<div class="space-y-2">
+<div class="h-1 bg-tertiary w-full rounded"></div>
+<div class="h-1 bg-tertiary/60 w-3/4 rounded"></div>
+<div class="h-1 bg-tertiary/30 w-1/2 rounded"></div>
+</div>
+</div>
+<div class="md:col-span-3 bg-surface-container-high p-8 rounded-xl flex items-center gap-8">
+<div class="flex-1">
+<h4 class="text-2xl font-bold mb-2">私域运营与转化</h4>
+<p class="text-on-surface-variant">将流量转化为真正的利润，全套成交话术。让你的每一位粉丝都具有高度价值。</p>
+</div>
+<span class="material-symbols-outlined text-6xl text-secondary hidden sm:block">hub</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Social Proof Section -->
+<section class="py-24 px-8" id="results">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="text-4xl md:text-6xl font-black tracking-tighter mb-4">已经有人开始这样做</h2>
+<p class="text-on-surface-variant font-label">Real results from our private cohort</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<!-- Proof Image 1 -->
+<div class="bg-surface-container-low rounded-xl overflow-hidden p-2">
+<img alt="Mobile chat screenshots" class="w-full aspect-[3/4] object-cover rounded-lg" data-alt="Blurred mobile app interface showing high volume of incoming chat notifications and engagement metrics with green success indicators" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDy8ym0oAeiqseOnz5TEJIqyjhvCU-fyxS2d5x_bKoczdipseftI56CaOqgjXeXq0EoIDJJgXA8HsDGckkArjUvwHfVxmD7B-IooPiYo0KzvIife1TFD9zP2wDyBV1JtY7bdWQ9GoD6RtxdiABbuSSjO6xd1orDK9PztquL4Ro4nTUswYCBBN3fEVNhrElPJTZkP9do1jZfns2T5R5WpbiEQEb-0nU8joZ_BXq-Y7EXCdgYc-MH1BOlpvKjlfR9oKUqQrC96fWUWXs"/>
+<div class="p-6">
+<div class="flex items-center gap-2 mb-2">
+<span class="text-tertiary material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="text-xs font-label uppercase text-on-surface-variant">Verified Member</span>
+</div>
+<p class="italic text-on-surface">"第一周就开始接到精准客户咨询，AI帮我省了90%的写稿时间。"</p>
+</div>
+</div>
+<!-- Proof Image 2 -->
+<div class="bg-surface-container-low rounded-xl overflow-hidden p-2">
+<img alt="Payment success screenshots" class="w-full aspect-[3/4] object-cover rounded-lg" data-alt="Digital payment confirmation screen showing successful transaction with gold coins and abstract wealth patterns" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwjduxZIBQqHfNG0qEFN65P-xtK8E64Bn29TnnwH_6glWsKUoJJ-9M0gGFaP8E1Fs22XEoDNdwQCUuiFAfpq0Rjzcgh62Yy-AFelCAlsavirKiI5SSIjSx8BPvFaAodA_nZ-91OQKdt_11jdzCHtBfKGBXHlgTz6tm04vyq38hBoBP0cLurCXs92_c5FtwFsUCuBOhSKB1fUKaXyS7ABpgRd90vepE1_tK6RQIpWETT3woW3d35L9nY4bfPkHMCoPfGlwXVRXEtBM"/>
+<div class="p-6">
+<div class="flex items-center gap-2 mb-2">
+<span class="text-tertiary material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="text-xs font-label uppercase text-on-surface-variant">Verified Member</span>
+</div>
+<p class="italic text-on-surface">"以前只懂算命，现在懂了做生意。变现链路打通后，心态完全不一样了。"</p>
+</div>
+</div>
+<!-- Proof Image 3 -->
+<div class="bg-surface-container-low rounded-xl overflow-hidden p-2">
+<img alt="Social media engagement metrics" class="w-full aspect-[3/4] object-cover rounded-lg" data-alt="Graph showing massive growth in social media followers and engagement rates with vibrant neon styling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARMA6wLnWwYbrDjCYKyLfHtMJleuNLNZzCO2MBntS8pKopnCeZ19WqP33tyBbRsSYSOyiQ07DeiUuFGeQuXeORLxEAxyXATu0IvDp_MO7yaQH7_KsYvAXuTcKkhh-5YFIUlY1WjilqGEvBvvPTDP8cDV8gGYXjb8BYm3Pb42HronvdZok9hqgZTU3ifhcrXedF8fuHSTtonEb5HrLWOO9mxPX-cDf89bDZT2bXM-Lqfs9AiBPHLv-Gi43t3KqoZY7d7Xtxtt0un7k"/>
+<div class="p-6">
+<div class="flex items-center gap-2 mb-2">
+<span class="text-tertiary material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="text-xs font-label uppercase text-on-surface-variant">Verified Member</span>
+</div>
+<p class="italic text-on-surface">"短视频流量爆了！老师教的AI钩子真的太好用了，客单价涨了3倍。"</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- The Offer & Bonuses -->
+<section class="py-24 px-8 bg-surface-container-high" id="offer">
+<div class="max-w-4xl mx-auto">
+<div class="bg-background rounded-2xl border-2 border-primary/30 p-12 relative overflow-hidden">
+<div class="absolute top-0 right-0 wealth-gradient px-8 py-2 font-black text-on-secondary-fixed text-sm uppercase tracking-widest">
+                    Limited Time Offer
+                </div>
+<h2 class="text-4xl md:text-6xl font-black mb-8 tracking-tighter uppercase leading-tight">
+                    加入 <span class="text-secondary">THE NEON ORACLE</span> 计划
+                </h2>
+<div class="space-y-6 mb-12">
+<div class="flex items-start gap-4 p-6 bg-surface-container-low rounded-xl border border-outline-variant/10">
+<div class="p-3 bg-primary-container rounded-lg">
+<span class="material-symbols-outlined text-on-primary-container">auto_awesome</span>
+</div>
+<div>
+<h4 class="font-bold text-xl mb-1 text-primary">前20名进群额外赠送：</h4>
+<p class="text-on-surface-variant">高转化AI爆款视频模板 + 价值$999的成交话术锦集 + 全程陪跑获客指导。</p>
+</div>
+</div>
+<div class="flex items-start gap-4 p-6 bg-surface-container-low rounded-xl border border-outline-variant/10">
+<div class="p-3 bg-secondary-container rounded-lg">
+<span class="material-symbols-outlined text-on-secondary-container">group</span>
+</div>
+<div>
+<h4 class="font-bold text-xl mb-1 text-secondary">专属私密社群</h4>
+<p class="text-on-surface-variant">链接高净值同频圈子，共享行业最新玩法与资源渠道。</p>
+</div>
+</div>
+</div>
+<div class="text-center">
+<p class="font-label text-sm text-on-surface-variant mb-6 uppercase tracking-[0.2em]">Immediate Access • Results Guaranteed</p>
+<a class="inline-block w-full sm:w-auto bg-tertiary text-on-tertiary px-12 py-6 rounded-xl font-headline font-black text-2xl tracking-tighter hover:scale-105 transition-transform" href="https://wa.link/t84xz3">
+                        GET ACCESS NOW
+                    </a>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="py-24 px-8" id="faq">
+<div class="max-w-3xl mx-auto">
+<h2 class="text-4xl font-black mb-16 text-center tracking-tighter">FREQUENTLY ASKED QUESTIONS</h2>
+<div class="space-y-8">
+<!-- FAQ Item 1 -->
+<div class="bg-surface-container p-8 rounded-xl hover:bg-surface-container-low transition-colors">
+<h4 class="text-xl font-bold mb-4 flex items-center gap-4">
+<span class="text-primary material-symbols-outlined">help</span>
+                        零基础能学会吗？
+                    </h4>
+<p class="text-on-surface-variant leading-relaxed pl-10">
+                        完全可以。我们的系统从底层逻辑讲起，配合AI辅助工具，能让你在没有深厚玄学功底的情况下，依然能产出高质量的内容和分析。
+                    </p>
+</div>
+<!-- FAQ Item 2 -->
+<div class="bg-surface-container p-8 rounded-xl hover:bg-surface-container-low transition-colors">
+<h4 class="text-xl font-bold mb-4 flex items-center gap-4">
+<span class="text-primary material-symbols-outlined">help</span>
+                        学完后多久能看到效果？
+                    </h4>
+<p class="text-on-surface-variant leading-relaxed pl-10">
+                        只要严格执行我们的“7天快速启动法”，一周内即可产出第一条爆款潜力的视频，14天内完成首笔订单转化。
+                    </p>
+</div>
+<!-- FAQ Item 3 -->
+<div class="bg-surface-container p-8 rounded-xl hover:bg-surface-container-low transition-colors">
+<h4 class="text-xl font-bold mb-4 flex items-center gap-4">
+<span class="text-primary material-symbols-outlined">help</span>
+                        需要准备哪些工具？
+                    </h4>
+<p class="text-on-surface-variant leading-relaxed pl-10">
+                        只需要一台手机和电脑。我们会教你如何免费或低成本使用最顶尖的AI辅助软件。
+                    </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA Section -->
+<section class="py-32 px-8 bg-surface text-center overflow-hidden relative" id="cta">
+<div class="absolute inset-0 z-0 opacity-10">
+<div class="flex whitespace-nowrap text-[20vw] font-black leading-none tracking-tighter text-outline uppercase select-none">
+                THE NEON ORACLE THE NEON ORACLE THE NEON ORACLE
+            </div>
+</div>
+<div class="relative z-10 max-w-4xl mx-auto">
+<h2 class="text-6xl md:text-8xl font-black tracking-tighter mb-8 leading-[0.9]">
+                开启你的<br/><span class="text-tertiary">高变现</span>之路
+            </h2>
+<p class="text-xl text-on-surface-variant mb-12 max-w-2xl mx-auto">
+                停止观望，机会只留给先行者。点击下方按钮，联系我们的导师开启系统权限。
+            </p>
+<div class="flex flex-col sm:flex-row justify-center gap-6">
+<a class="flex items-center justify-center gap-3 bg-primary-container text-on-primary-container px-10 py-6 rounded-xl font-headline font-black text-xl tracking-tighter hover:scale-105 transition-all" href="https://wa.link/t84xz3" target="_blank">
+<span class="material-symbols-outlined">send</span>
+                    TELEGRAM
+                </a>
+<a class="flex items-center justify-center gap-3 bg-tertiary text-on-tertiary px-10 py-6 rounded-xl font-headline font-black text-xl tracking-tighter hover:scale-105 transition-all shadow-[0_0_30px_rgba(74,225,118,0.3)]" href="https://wa.link/t84xz3" target="_blank">
+<span class="material-symbols-outlined">chat</span>
+                    WHATSAPP
+                </a>
+</div>
+<p class="mt-8 font-label text-xs uppercase tracking-[0.4em] text-secondary">
+                Secure your spot • 20 slots only
+            </p>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-[#1C1B1B] w-full py-12 px-8 no-line-rule">
+<div class="flex flex-col md:flex-row justify-between items-center gap-6 max-w-7xl mx-auto">
+<div class="text-lg font-black text-[#9333EA] font-headline uppercase tracking-widest">
+                The Neon Oracle
+            </div>
+<div class="text-[#CFC2D7] font-['Space_Grotesk'] text-xs tracking-widest uppercase text-center md:text-left">
+                © 2024 THE NEON ORACLE. ALL RIGHTS RESERVED. HIGH-VELOCITY RESULTS ONLY.
+            </div>
+<div class="flex gap-6">
+<a class="text-[#CFC2D7] hover:text-[#4AE176] font-['Space_Grotesk'] text-xs uppercase transition-opacity opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="text-[#CFC2D7] hover:text-[#4AE176] font-['Space_Grotesk'] text-xs uppercase transition-opacity opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="text-[#CFC2D7] hover:text-[#4AE176] font-['Space_Grotesk'] text-xs uppercase transition-opacity opacity-80 hover:opacity-100" href="#">Affiliate Login</a>
+</div>
+</div>
+</footer>
+</body></html>
